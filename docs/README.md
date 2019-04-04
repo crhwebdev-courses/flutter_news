@@ -2,6 +2,10 @@
 
 A new Flutter project created for the Udemy course: Dart and Flutter: The Complete Developer's Guide
 
+## Project Details
+
+This project uses the [hacker news api](https://github.com/HackerNews/API)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
