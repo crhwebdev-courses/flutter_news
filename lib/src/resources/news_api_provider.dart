@@ -1,0 +1,5 @@
+class NewsApiProvider {
+  fetchTopIds() {}
+
+  fetchItem() {}
+}
