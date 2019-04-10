@@ -16,4 +16,6 @@ void main() {
     final ids = await newsApi.fetchTopIds();
     expect(ids, [1, 2, 3, 4]);
   });
+
+  test('FetchItem returns a item model', () async {});
 }
