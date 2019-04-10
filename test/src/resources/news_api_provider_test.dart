@@ -3,3 +3,9 @@ import 'dart:convert';
 import 'package:test_api/test_api.dart';
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
+
+void main() {
+  test('FetchTopIds returns a list of ids', () {
+    final newsApi = NewsApiProvider();
+  });
+}
