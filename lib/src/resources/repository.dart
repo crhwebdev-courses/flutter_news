@@ -7,7 +7,9 @@ class Repository {
   NewsDbProvider dbProvider = NewsDbProvider();
   NewsApiProvider apiProvider = NewsApiProvider();
 
-  fetchTopIds() {}
+  fetchTopIds() {
+    return apiProvider.fetchTopIds();
+  }
 
   fetchItem(int id) {}
 }
