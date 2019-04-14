@@ -11,5 +11,17 @@ class Repository {
     return apiProvider.fetchTopIds();
   }
 
-  fetchItem(int id) {}
+  fetchItem(int id) async {
+    //check for item in db and return it if it exists
+    var item = await dbProvider.fetchItem(id);
+    if (item != null) {
+      return item;
+    }
+
+    //get item from api if it is not cached in database
+    item = await apiProvider.fetchItem(id);
+    dbProvider.addItem(item);
+
+    return item;
+  }
 }
