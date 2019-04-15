@@ -6,7 +6,7 @@ import 'dart:async';
 import 'repository.dart';
 import '../models/item_model.dart';
 
-class NewsDbProvider implements Source {
+class NewsDbProvider implements Source, Cache {
   Database db;
 
   //initalizes the sql-lite database
