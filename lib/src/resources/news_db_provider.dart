@@ -3,9 +3,10 @@ import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'dart:async';
+import 'repository.dart';
 import '../models/item_model.dart';
 
-class NewsDbProvider {
+class NewsDbProvider implements Source {
   Database db;
 
   //initalizes the sql-lite database
@@ -33,6 +34,11 @@ class NewsDbProvider {
             )
           """);
     });
+  }
+
+  // Todo - store and fetch top ids
+  Future<List<int>> fetchTopIds() {
+    return null;
   }
 
   Future<ItemModel> fetchItem(int id) async {
