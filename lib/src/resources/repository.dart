@@ -13,8 +13,11 @@ class Repository {
     newsDbProvider,
   ];
 
+  //Todo : iterate over list of sources and call fetchTopIds
+  // need to immplement method on NewsDbProvider first
   Future<List<int>> fetchTopIds() {
-    return apiProvider.fetchTopIds();
+    //hack that just calls fetchTopIds on NewsApiProvider only
+    return sources[1].fetchTopIds();
   }
 
   Future<ItemModel> fetchItem(int id) async {
