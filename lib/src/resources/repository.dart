@@ -5,12 +5,12 @@ import '../models/item_model.dart';
 
 class Repository {
   List<Source> sources = <Source>[
-    NewsDbProvider(),
+    newsDbProvider,
     NewsApiProvider(),
   ];
 
   List<Cache> caches = <Cache>[
-    NewsDbProvider(),
+    newsDbProvider,
   ];
 
   Future<List<int>> fetchTopIds() {
@@ -47,3 +47,5 @@ abstract class Source {
 abstract class Cache {
   Future<int> addItem(ItemModel item);
 }
+
+final newsDbProvider = NewsDbProvider();
