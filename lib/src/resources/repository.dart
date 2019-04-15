@@ -18,15 +18,21 @@ class Repository {
   }
 
   Future<ItemModel> fetchItem(int id) async {
-    //check for item in db and return it if it exists
-    var item = await dbProvider.fetchItem(id);
-    if (item != null) {
-      return item;
+    ItemModel item;
+    Source source;
+
+    //look for item in sources
+    for (source in sources) {
+      item = await source.fetchItem(id);
+      if (item != null) {
+        break;
+      }
     }
 
-    //get item from api if it is not cached in database
-    item = await apiProvider.fetchItem(id);
-    dbProvider.addItem(item);
+    //now add the item to all caches
+    for (var cache in caches) {
+      cache.addItem(item);
+    }
 
     return item;
   }
