@@ -9,6 +9,10 @@ import '../models/item_model.dart';
 class NewsDbProvider implements Source, Cache {
   Database db;
 
+  NewsDbProvider() {
+    init();
+  }
+
   //initalizes the sql-lite database
   void init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
