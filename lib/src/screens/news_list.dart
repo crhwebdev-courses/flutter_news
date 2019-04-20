@@ -9,7 +9,23 @@ class NewsList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Top News'),
       ),
-      body: Text('Show a list'),
+      body: BuildList(bloc),
     );
+  }
+
+  Widget BuildList(StoriesBloc bloc) {
+    return StreamBuilder(
+        stream: bloc.topIds,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Text('Still waiting on Ids');
+          }
+
+          return ListView.builder(
+              itemCount: snapshot.data.length,
+              itemBuilder: (context, int index) {
+                return Text(snapshot.data[index]);
+              });
+        });
   }
 }
