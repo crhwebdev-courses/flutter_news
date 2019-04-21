@@ -15,6 +15,9 @@ class StoriesBloc {
   // Getters to get Streams
   Observable<List<int>> get topIds => _topIds.stream;
 
+  // Getters to Sinks
+  Function(int) get fetchItem => _items.sink.add;
+
   fetchTopIds() async {
     //fetch ids from repository
     final ids = await _repository.fetchTopIds();
@@ -39,5 +42,6 @@ class StoriesBloc {
   //destructor
   dispose() {
     _topIds.close();
+    _items.close();
   }
 }
