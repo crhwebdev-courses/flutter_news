@@ -5,7 +5,12 @@ import '../resources/repository.dart';
 
 class StoriesBloc {
   final _repository = Repository();
+
+  //Rx stream
   final _topIds = PublishSubject<List<int>>();
+
+  //Rx stream controller
+  final _items = BehaviorSubject<int>();
 
   // Getters to get Streams
   Observable<List<int>> get topIds => _topIds.stream;
