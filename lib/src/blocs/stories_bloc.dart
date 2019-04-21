@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:rxdart/rxdart.dart';
 import '../models/item_model.dart';
 import '../resources/repository.dart';
@@ -16,6 +17,18 @@ class StoriesBloc {
     //add ids to _topIds sink so that they are available to other
     // components
     _topIds.sink.add(ids);
+  }
+
+  //helper method that returns a cache map with ItemModels
+  //for each id given to it
+  _itemsTransformer() {
+    return ScanStreamTransformer(
+      (Map<int, Future<ItemModel>> cache, int id, _) {
+        cache[id] = _repository.fetchItem(id);
+        return cache;
+      },
+      <int, Future<ItemModel>>{},
+    );
   }
 
   //destructor
