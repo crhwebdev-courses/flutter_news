@@ -10,7 +10,9 @@ class StoriesBloc {
   final _topIds = PublishSubject<List<int>>();
 
   //Rx stream controller
-  final _items = BehaviorSubject<int>();
+  final _itemsOutput = BehaviorSubject<Map<int, Future<ItemModel>>>();
+
+  final _itemsFetcher = PublishSubject<int>();
 
   // New stream returned by initializing _items.stream
   Observable<Map<int, Future<ItemModel>>> items;
@@ -19,11 +21,11 @@ class StoriesBloc {
   Observable<List<int>> get topIds => _topIds.stream;
 
   // Getters to Sinks
-  Function(int) get fetchItem => _items.sink.add;
+  Function(int) get fetchItem => _itemsOutput.sink.add;
 
   //construtor that initializes _items.stream.transform with _itemsTransformer
   StoriesBloc() {
-    items = _items.stream.transform(_itemsTransformer());
+    items = _itemsOutput.stream.transform(_itemsTransformer());
   }
 
   fetchTopIds() async {
