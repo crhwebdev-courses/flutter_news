@@ -23,7 +23,7 @@ class StoriesBloc {
 
   //construtor that initializes _items.stream.transform with _itemsTransformer
   StoriesBloc() {
-    items = _itemsOutput.stream.transform(_itemsTransformer());
+    _itemsFetcher.stream.transform(_itemsTransformer()).pipe(_itemsOutput);
   }
 
   fetchTopIds() async {
