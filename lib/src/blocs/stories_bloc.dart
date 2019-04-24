@@ -14,9 +14,6 @@ class StoriesBloc {
 
   final _itemsFetcher = PublishSubject<int>();
 
-  // New stream returned by initializing _items.stream
-  Observable<Map<int, Future<ItemModel>>> items;
-
   // Getters to get Streams
   Observable<List<int>> get topIds => _topIds.stream;
 
