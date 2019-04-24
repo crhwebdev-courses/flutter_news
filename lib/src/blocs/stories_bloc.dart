@@ -16,6 +16,7 @@ class StoriesBloc {
 
   // Getters to get Streams
   Observable<List<int>> get topIds => _topIds.stream;
+  Observable<Map<int, Future<ItemModel>>> get items => _itemsOutput.stream;
 
   // Getters to Sinks
   Function(int) get fetchItem => _itemsOutput.sink.add;
