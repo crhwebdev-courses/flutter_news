@@ -50,6 +50,7 @@ class StoriesBloc {
   //destructor
   dispose() {
     _topIds.close();
-    _items.close();
+    _itemsFetcher.close();
+    _itemsOutput.close();
   }
 }
