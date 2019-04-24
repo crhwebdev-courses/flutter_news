@@ -19,7 +19,7 @@ class StoriesBloc {
   Observable<Map<int, Future<ItemModel>>> get items => _itemsOutput.stream;
 
   // Getters to Sinks
-  Function(int) get fetchItem => _itemsOutput.sink.add;
+  Function(int) get fetchItem => _itemsFetcher.sink.add;
 
   //construtor that initializes _items.stream.transform with _itemsTransformer
   StoriesBloc() {
