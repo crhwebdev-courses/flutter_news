@@ -9,7 +9,7 @@ class ItemModel {
   final String text;
   final bool dead;
   final int parent;
-  final List<int> kids;
+  final List<dynamic> kids;
   final String url;
   final int score;
   final String title;
