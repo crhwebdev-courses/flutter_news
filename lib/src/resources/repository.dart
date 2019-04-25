@@ -25,17 +25,19 @@ class Repository {
     Source source;
 
     //look for item in sources
-    for (source in sources) {
+    /*for (source in sources) {
       item = await source.fetchItem(id);
       if (item != null) {
         break;
       }
-    }
+    }*/
+
+    item = await sources[1].fetchItem(id);
 
     //now add the item to all caches
-    for (var cache in caches) {
+    /*for (var cache in caches) {
       cache.addItem(item);
-    }
+    }*/
 
     return item;
   }

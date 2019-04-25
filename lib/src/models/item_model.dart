@@ -9,11 +9,11 @@ class ItemModel {
   final String text;
   final bool dead;
   final int parent;
-  final List<dynamic> kids;
+  final List<int> kids;
   final String url;
   final int score;
   final String title;
-  final List<int> descendants;
+  final int descendants;
 
   ItemModel.fromJson(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
@@ -23,12 +23,12 @@ class ItemModel {
         time = parsedJson['time'],
         text = parsedJson['text'] ?? '',
         dead = parsedJson['dead'] ?? false,
-        parent = parsedJson['parent'],
-        kids = parsedJson['kids'] ?? [],
+        parent = parsedJson['parent'] ?? -1,
+        kids = [],
         url = parsedJson['url'],
         score = parsedJson['score'],
         title = parsedJson['title'],
-        descendants = parsedJson['descendants'];
+        descendants = parsedJson['descendants'] ?? 0;
 
   ItemModel.fromDb(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
@@ -43,7 +43,7 @@ class ItemModel {
         url = parsedJson['url'],
         score = parsedJson['score'],
         title = parsedJson['title'],
-        descendants = parsedJson['descendants'];
+        descendants = parsedJson['descendants'] ?? 0;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
