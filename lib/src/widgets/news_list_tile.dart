@@ -24,8 +24,8 @@ class NewsListTile extends StatelessWidget {
               if (!snapshot.hasData) {
                 return Text('Still loading item $itemId');
               }
-
-              return Text('${itemSnapshot.data.title}');
+              return Text('loaded id $itemId');
+              //return Text('${itemSnapshot.data.title}');
             });
       },
     );
