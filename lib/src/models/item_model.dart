@@ -15,6 +15,8 @@ class ItemModel {
   final String title;
   final int descendants;
 
+  //TODO: fix bug with kids field sometimes failing to read properly and causing
+  // item to fail to be converted to ItemModel
   ItemModel.fromJson(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
         deleted = parsedJson['deleted'] ?? false,
