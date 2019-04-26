@@ -13,11 +13,11 @@ class NewsList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Top News'),
       ),
-      body: BuildList(bloc),
+      body: buildList(bloc),
     );
   }
 
-  Widget BuildList(StoriesBloc bloc) {
+  Widget buildList(StoriesBloc bloc) {
     return StreamBuilder(
         stream: bloc.topIds,
         builder: (context, AsyncSnapshot<List<int>> snapshot) {
