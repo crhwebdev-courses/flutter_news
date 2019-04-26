@@ -29,9 +29,16 @@ class NewsListTile extends StatelessWidget {
                 return Text('item id $itemId');
               }
 
-              return Text('$itemId : ${itemSnapshot.data.title}');
+              return buildTile(itemSnapshot.data);
             });
       },
+    );
+  }
+
+  Widget buildTile(ItemModel item) {
+    return ListTile(
+      title: Text(item.title),
+      subtitle: Text('${item.score} votes'),
     );
   }
 }
