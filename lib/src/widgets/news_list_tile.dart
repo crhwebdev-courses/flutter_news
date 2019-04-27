@@ -22,12 +22,8 @@ class NewsListTile extends StatelessWidget {
         return FutureBuilder(
             future: snapshot.data[itemId],
             builder: (context, AsyncSnapshot<ItemModel> itemSnapshot) {
-              if (!snapshot.hasData) {
+              if (!itemSnapshot.hasData) {
                 return LoadingContainer();
-              }
-
-              if (itemSnapshot.data == null) {
-                return Text('item id $itemId');
               }
 
               return buildTile(itemSnapshot.data);
