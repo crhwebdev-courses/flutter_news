@@ -35,7 +35,7 @@ class StoriesBloc {
     _topIds.sink.add(ids);
   }
 
-  Future<int> clearCache() {
+  clearCache() {
     return _repository.clearCache();
   }
 
