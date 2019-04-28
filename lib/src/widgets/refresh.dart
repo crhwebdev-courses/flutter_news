@@ -8,6 +8,7 @@ class Refresh extends StatelessWidget {
   Widget build(context) {
     return RefreshIndicator(
       child: child,
+      onRefresh: () {},
     );
   }
 }
