@@ -35,6 +35,10 @@ class StoriesBloc {
     _topIds.sink.add(ids);
   }
 
+  Future<int> clearCache() {
+    return _repository.clearCache();
+  }
+
   //helper method that returns a cache map with ItemModels
   //for each id given to it
   _itemsTransformer() {
