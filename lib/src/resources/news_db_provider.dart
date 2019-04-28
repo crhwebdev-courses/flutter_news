@@ -65,3 +65,5 @@ class NewsDbProvider implements Source, Cache {
         conflictAlgorithm: ConflictAlgorithm.ignore);
   }
 }
+
+final newsDbProvider = NewsDbProvider();
