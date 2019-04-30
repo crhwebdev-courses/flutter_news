@@ -14,10 +14,18 @@ class App extends StatelessWidget {
   }
 
   Route routes(RouteSettings settings) {
-    return MaterialPageRoute(
-      builder: (context) {
-        return NewsList();
-      },
-    );
+    if (settings.name == '/') {
+      return MaterialPageRoute(
+        builder: (context) {
+          return NewsList();
+        },
+      );
+    } else {
+      return MaterialPageRoute(
+        builder: (context) {
+          return NewsDetail();
+        },
+      );
+    }
   }
 }
