@@ -36,6 +36,9 @@ class NewsListTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
+          onTap: () {
+            print('${item.id} was tapped!!!');
+          },
           title: Text(item.title),
           subtitle: Text('${item.score} votes'),
           trailing: Column(
