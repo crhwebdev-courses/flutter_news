@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 class NewsDetail extends StatelessWidget {
   Widget build(context) {
-    return Text("i'm a news detail");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detali'),
+      ),
+      body: Text('Im a details screen'),
+    );
   }
 }
