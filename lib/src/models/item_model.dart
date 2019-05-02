@@ -26,7 +26,7 @@ class ItemModel {
         text = parsedJson['text'] ?? '',
         dead = parsedJson['dead'] ?? false,
         parent = parsedJson['parent'] ?? -1,
-        kids = [],
+        kids = parsedJson['kids'] ?? [],
         url = parsedJson['url'],
         score = parsedJson['score'],
         title = parsedJson['title'],
