@@ -7,6 +7,12 @@ class CommentsBloc {
   final _commentsFetcher = PublishSubject<int>();
   final _commentsOutput = BehaviorSubject<Map<int, Future<ItemModel>>>();
 
+  // Streams
+  Observable<Map<int, Future<ItemModel>>> get itemWithComments =>
+      _commentsOutput.stream;
+
+  // Sink
+
   dispose() {
     _commentsFetcher.close();
     _commentsOutput.close();
