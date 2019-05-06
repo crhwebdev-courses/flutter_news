@@ -15,7 +15,7 @@ class CommentsBloc {
   // Sink
   Function(int) get fetchItemWithComments => _commentsFetcher.sink.add;
 
-  CommentsBlock() {
+  CommentsBloc() {
     _commentsFetcher.stream
         .transform(_commentsTransformer())
         .pipe(_commentsOutput);
