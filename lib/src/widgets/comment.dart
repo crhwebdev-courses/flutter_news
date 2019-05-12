@@ -16,7 +16,11 @@ class Comment extends StatelessWidget {
           return Text('Still loading comment');
         }
 
-        return Text(snapshot.data.text);
+        return Column(
+          children: [
+            Text(snapshot.data.text),
+          ],
+        );
       },
     );
   }
