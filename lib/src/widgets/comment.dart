@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/item_model.dart';
+import 'news_list_tile.dart';
 
 class Comment extends StatelessWidget {
   final int itemId;
@@ -16,11 +17,17 @@ class Comment extends StatelessWidget {
           return Text('Still loading comment');
         }
 
+        final item = snapshot.data;
+
         final children = <Widget>[
-          Text(snapshot.data.text),
+          ListTile(
+            title: Text(item.text),
+            subtitle: Text(item.by),
+          ),
+          Divider(),
         ];
 
-        snapshot.data.kids.forEach((kidId) {
+        item.kids.forEach((kidId) {
           children.add(
             Comment(
               itemId: kidId,
