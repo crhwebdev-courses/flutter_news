@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/item_model.dart';
-import 'news_list_tile.dart';
+import 'loading_container.dart';
 
 class Comment extends StatelessWidget {
   final int itemId;
