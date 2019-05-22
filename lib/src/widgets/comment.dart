@@ -50,6 +50,8 @@ class Comment extends StatelessWidget {
   }
 
   buildText(ItemModel item) {
+    //TODO: Replace with a real expressions that replace html tags so that
+    // we do not have to do it manually.
     final text = item.text
         .replaceAll('&#x27;', "'")
         .replaceAll('<p>', '\n\n')
